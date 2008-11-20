@@ -1,3 +1,5 @@
+// git hub에서 바로 고치기
+
 #include <iostream>
 #include <cstring>
 
