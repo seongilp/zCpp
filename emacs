@@ -2,46 +2,46 @@
 
 (defconst not-mswin (not (eq system-type 'windows-nt)) "MS윈도우가 아니면 참")
 
-(add-to-list 'load-path "~/.emacs.d/yasnippet")
-(require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/yasnippet/snippets")
+;;(add-to-list 'load-path "~/.emacs.d/yasnippet")
+;;(require 'yasnippet)
+;;(yas/initialize)
+;;(yas/load-directory "~/.emacs.d/yasnippet/snippets")
 
-(add-to-list 'load-path "~/.emacs.d/emf")
-(autoload 'expand-member-functions "member-functions" "Expand C++ member function declarations" t)
-(add-hook 'c++-mode-hook (lambda () (local-set-key "\C-cm" 'expand-member-functions)))
+;;(add-to-list 'load-path "~/.emacs.d/emf")
+;;(autoload 'expand-member-functions "member-functions" "Expand C++ member function declarations" t)
+;;(add-hook 'c++-mode-hook (lambda () (local-set-key "\C-cm" 'expand-member-functions)))
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
-(add-to-list 'load-path "~/.emacs.d/ecb-snap/")
-(require 'ecb-autoloads)
+;;(add-to-list 'load-path "~/.emacs.d/ecb-snap/")
+;;(require 'ecb-autoloads)
 ;;(load "~/.emacs.d/ecb-snap")
 ;;(load "~/.emacs.d/_personal-plugins_/ecb-snippets")
 
 (global-cwarn-mode 1)
-(setnu-mode 1)
+;;(setnu-mode 1)
 
-(load-file "~/.emacs.d/cedet-cvs/common/cedet.el")
-(global-ede-mode 1)
-(require 'semantic-ia)
-(global-semanticdb-minor-mode 1)
-(semantic-load-enable-minimum-features)
-(semantic-load-enable-code-helpers)
+;;(load-file "~/.emacs.d/cedet-cvs/common/cedet.el")
+;;(global-ede-mode 1)
+;;(require 'semantic-ia)
+;;(global-semanticdb-minor-mode 1)
+;;(semantic-load-enable-minimum-features)
+;;(semantic-load-enable-code-helpers)
 (setq semanticdb-default-save-directory "~/.emacs.d/#semanticdb.cache#")
-(semantic-add-system-include "/usr/include/gtkmm-2.4/" 'c++-mode)
+;;(semantic-add-system-include "/usr/include/gtkmm-2.4/" 'c++-mode)
 
-(global-set-key [(control return)] 'semantic-ia-complete-symbol-menu)
-(global-set-key [(control shift return)] 'semantic-ia-complete-tip)
-(global-set-key [(control c)(control return)] 'semantic-complete-analyze-inline)
-(global-set-key [(shift return)] 'semantic-analyze-possible-completions)
+;;(global-set-key [(control return)] 'semantic-ia-complete-symbol-menu)
+;;(global-set-key [(control shift return)] 'semantic-ia-complete-tip)
+;;(global-set-key [(control c)(control return)] 'semantic-complete-analyze-inline)
+;;(global-set-key [(shift return)] 'semantic-analyze-possible-completions)
 
-;;;; 심볼완성 키바인딩 예제
+;; 심볼완성 키바인딩 예제
 ;; M-/ (dabbrev-expand) - emacs에 기본 설정 되어 있음
 ;;senator-complete-symbol 기본 키바인딩은 C-c , TAB 이고 아래는 추가 지정한 것임
-(global-set-key [(meta return)] 'senator-complete-symbol)
-(global-set-key [(meta shift return)] 'complete-symbol)
+;;(global-set-key [(meta return)] 'senator-complete-symbol)
+;;(global-set-key [(meta shift return)] 'complete-symbol)
 ;; ebrowse-tags-complete-symbol 기본 키바인딩은 C-c RET TAB 이고 아래는 추가 지정한 것임
-(global-set-key [(control meta return)] 'ebrowse-tags-complete-symbol)
+;;(global-set-key [(control meta return)] 'ebrowse-tags-complete-symbol)
 
 ;;;; == 기본 색상 및 위치 변경 ==
 ;; emacs 자체 customize에서 배경 및 글자색 변경하면 semantic-ia-complete-tip 글자가 안보이기 때문에 여기서 지정
@@ -70,13 +70,13 @@
 
 ;; * rectangle-mark
 ;; 사각형으로 영역 선택 반전이 가능하도록
-(load "~/.emacs.d/rectangle-mark")
+;;(load "~/.emacs.d/rectangle-mark")
 
 ;; * smart compile, mode compile
-(load "~/.emacs.d/compile/compile-snippets")
+;;(load "~/.emacs.d/compile/compile-snippets")
 
 ;; * tags-snippets
-(load "~/.emacs.d/tags-snippets")
+;;(load "~/.emacs.d/tags-snippets")
 
 ;; * 괄호 짝 맞추는 기능 vi %명령과 같음
 (show-paren-mode t)
@@ -84,13 +84,13 @@
 
 ;;;; == screen-lines-mode ==
 ;; longlines-mode와 비슷하시지만 좀더 직관적임, vim의 gj, gk 와 비슷
-(add-to-list 'load-path "~/.emacs.d/screen-lines")
-(autoload 'screen-lines-mode "screen-lines"
-  "Toggle Screen Lines minor mode for the current buffer." t)
-(autoload 'turn-on-screen-lines-mode "screen-lines"
-  "Turn on Screen Lines minor mode for the current buffer." t)
-(autoload 'turn-off-screen-lines-mode "screen-lines"
-  "Turn off Screen Lines minor mode for the current buffer." t)
+;;(add-to-list 'load-path "~/.emacs.d/screen-lines")
+;;(autoload 'screen-lines-mode "screen-lines"
+;;  "Toggle Screen Lines minor mode for the current buffer." t)
+;;(autoload 'turn-on-screen-lines-mode "screen-lines"
+;;  "Turn on Screen Lines minor mode for the current buffer." t)
+;;(autoload 'turn-off-screen-lines-mode "screen-lines"
+;;  "Turn off Screen Lines minor mode for the current buffer." t)
 
 ;; * 다른 윈도우로 전환
 (global-set-key [(control tab)] 'other-window) 
@@ -183,21 +183,9 @@
 ;;         (find (aref (buffer-name buffer) 0) " *")) (buffer-list))))
 ;;(tabbar-mode)
 
-;; Org-mode 설정
-(add-to-list 'load-path "~/.emacs.d/org/org-mode")
-(require 'org)
-(add-to-list 'auto-mode-alist '("\\.org$" . org-mode))
-(define-key global-map "\C-cl" 'org-store-link)
-(define-key global-map "\C-ca" 'org-agenda)
-(setq org-log-done t)
-
-(setq gdb-many-windows t)
-(add-to-list 'load-path "~/.emacs.d/gdb-snippets")
-(load "gdb-snippets")
-
 (add-hook 'c-mode-hook 'turn-on-setnu-mode)       ;; 각 모드에서 setnu를 킴
 ;;(add-hook 'text-mode-hook 'turn-on-setnu-mode)
-(add-hook 'c++-mode-hook 'turn-on-setnu-mode)
+;;(add-hook 'c++-mode-hook 'turn-on-setnu-mode)
 
 (setq-default indent-tabs-mode t)
 (setq default-tab-width 8)
@@ -235,19 +223,21 @@
 ;; 도움말 키를 C-x h 로 바꿈
 (global-set-key [?\M-?] 'help-command)
 
+;; Load CEDET
+(load-file "/usr/share/emacs/site-lisp/cedet/common/cedet.el")
+
+;;(require 'ecb)
+(require 'ecb-autoloads)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(ecb-options-version "2.33beta2")
- '(tabbar-mode t nil (tabbar)))
+ '(ecb-options-version "2.32"))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
  )
-
-dd
