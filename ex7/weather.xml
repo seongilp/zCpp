@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<current_observation version="1.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.weather.gov/data/current_obs/current_observation.xsd">
+	<credit>NOAA's National Weather Service</credit>
+	<credit_URL>http://weather.gov/</credit_URL>
+	<image>
+		<url>http://weather.gov/images/xml_logo.gif</url>
+		<title>NOAA's National Weather Service</title>
+		<link>http://weather.gov</link>
+	</image>
+	<suggested_pickup>15 minutes after the hour</suggested_pickup>
+	<suggested_pickup_period>60</suggested_pickup_period>
+	<location>Los Angeles Intl Airport, CA</location>
+	<station_id>KLAX</station_id>
+        <latitude>33.940</latitude>
+        <longitude>-118.400</longitude>
+	<observation_time>Last Updated on Feb 26, 12:50 pm PST</observation_time>
+	<observation_time_rfc822>Mon, 26 Feb 2007 12:50:00 -0800 PST</observation_time_rfc822>
+        <weather>Partly Cloudy</weather>
+        <temperature_string>58 F (14 C)</temperature_string>
+        <temp_f>58</temp_f>
+        <temp_c>14</temp_c>
+        <relative_humidity>67</relative_humidity>
+        <wind_string>From the West at 12 MPH</wind_string>
+        <wind_dir>West</wind_dir>
+        <wind_degrees>280</wind_degrees>
+        <wind_mph>11.5</wind_mph>
+        <wind_gust_mph>NA</wind_gust_mph>
+        <pressure_string>30.08" (1018.4 mb)</pressure_string>
+        <pressure_mb>1018.4</pressure_mb>
+        <pressure_in>30.08</pressure_in>
+        <dewpoint_string>47 F (8 C)</dewpoint_string>
+        <dewpoint_f>47</dewpoint_f>
+        <dewpoint_c>8</dewpoint_c> 
+        <heat_index_string>NA</heat_index_string>         
+        <heat_index_f>NA</heat_index_f>
+        <heat_index_c>NA</heat_index_c>
+      	<windchill_string>56 F (13 C)</windchill_string>
+      	<windchill_f>56</windchill_f>
+      	<windchill_c>13</windchill_c>
+	<visibility_mi>7.00</visibility_mi>
+ 	<icon_url_base>http://weather.gov/weather/images/fcicons/</icon_url_base>	
+	<icon_url_name>sct.jpg</icon_url_name>
+	<two_day_history_url>http://www.weather.gov/data/obhistory/KLAX.html</two_day_history_url>
+	<ob_url>http://www.nws.noaa.gov/data/METAR/KLAX.1.txt</ob_url>
+	<disclaimer_url>http://weather.gov/disclaimer.html</disclaimer_url>
+	<copyright_url>http://weather.gov/disclaimer.html</copyright_url>
+	<privacy_policy_url>http://weather.gov/notice.html</privacy_policy_url>
+</current_observation>
