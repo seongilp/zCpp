@@ -7,7 +7,7 @@ using namespace std;
 class Time
 {
 public:
-  Time();
+  Time(int hour0=0, int min0=0);
   virtual ~Time();
   friend ostream& operator<<(ostream &out, const Time &t); // output
   friend istream& operator>>(istream &in, Time &t);	   // input
@@ -50,11 +50,10 @@ int main(int argc, char *argv[])
   return 0;
 }
 
-Time::Time() {
-  hour = 0;
-  min  = 0;
+Time::Time(int hour0, int min0) {
+  hour = hour0;
+  min = min0;
 }
-
 Time::~Time() {
 }
 
@@ -88,14 +87,13 @@ ostream &operator<<(ostream &out, const Time &t) {
 }
 
 Time &Time::operator-(const Time &temp) {
-//Time Time::subtract(const Time &temp) {
   int a,b,sub;
   a   = hour*60+min;
   b   = temp.hour*60+temp.min;
   sub = a-b;
   a   = sub/60;
   b   = sub%60;
-  Time test;
+  static Time test;
   test.hour = a;
   test.min  = b;
   return test;
@@ -104,10 +102,12 @@ Time &Time::operator-(const Time &temp) {
 Time &Time::operator++() {
   hour++;
   min++;
+  return *this;
 }
 
 Time Time::operator++(int) {
+  Time temp(hour,min);
   hour++;
   min++;
-  return *this;
+  return temp;
 }

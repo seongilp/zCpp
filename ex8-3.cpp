@@ -9,6 +9,7 @@ public:
   Person(const Person &p);	// copy constructor
   ~Person();			// destructor
   friend ostream &operator<<(ostream &out, const Person &p);
+  static int num;
 
 private:
   char	*name;			// name
@@ -26,6 +27,8 @@ Person::Person(const char *name0, int noc0, int age1, int age2) {
     ages[0] = age1;
     ages[1] = age2;
   }
+  num++;
+  cout << "Ref num is " << num << endl;  
 }
 
 ostream &operator<<(ostream &out, const Person &p)
@@ -41,14 +44,22 @@ ostream &operator<<(ostream &out, const Person &p)
 Person::~Person() {
   delete ages;
   cout << "desturctor is done" << endl;
+  num--;
 }
 
-int main(void) { 
-  Person p1("aaaa",0);
-  Person p2("bbbb",1,1);
-  Person p3("cccc",2,1,2);
-  cout << "Person 1: " << p1 << endl;
-  cout << "Person 2: " << p2 << endl;
-  cout << "Person 3: " << p3 << endl;
+int Person::num = 0;
+
+int main(void) {
+  Person **pArray;
+  pArray = new Person*[3];
+  pArray[0] = new Person("aaaa");
+  pArray[1] = new Person("bbbb",1,1);
+  pArray[2] = new Person("cccc",2,1,2);
+  cout << "Person 1: " << *pArray[0] << endl;
+  cout << "Person 2: " << *pArray[1] << endl;
+  cout << "Person 3: " << *pArray[2] << endl;
+  for(int i=0;i<3;i++)
+    delete pArray[i];
+  delete[] pArray;
   return 0;
 }
