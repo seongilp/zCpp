@@ -17,3 +17,8 @@ class Counter {
         int count;
 };
 
+class LimitedCounter : public Counter {
+public:
+	LimitedCounter(Counter &c0, int limit);
+
+}
