@@ -11,7 +11,7 @@ class Counter {
         Counter operator++(int);
         bool operator<(const Counter &c2) const;
         void reset();
-		int getCount() const;
+	int getCount() const;
 
     private:
         int count;
@@ -19,6 +19,13 @@ class Counter {
 
 class LimitedCounter : public Counter {
 public:
-	LimitedCounter(Counter &c0, int limit);
-
-}
+	LimitedCounter(int min0, int max0);
+	LimitedCounter &operator++();
+	LimitedCounter operator++(int);
+	bool operator<<(const LimitedCounter &lc2) const;
+	void reset();
+	int getCount() const;
+private:
+	Counter c;
+	int min, max;
+};

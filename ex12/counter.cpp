@@ -36,3 +36,28 @@ ostream &operator<<(ostream & out, const Counter &c) {
      return out;
 
 }
+
+LimitedCounter:: LimitedCounter(int min0, int max0) : c(min0) {
+  min = min0;
+  max = max0;
+}
+
+LimitedCounter& LimitedCounter::operator++() {
+  c.count++;
+  return *this;
+}
+
+LimitedCounter LimitedCounter::operator++(int) {
+  LimitedCounter old = *this;
+  c.count++;
+  return old;
+}
+
+void LimitedCounter::reset() {
+  c.count = 0;
+}
+
+bool LimitedCounter::opreator<(const LimitedCounter &lc2) const {
+  return count < lc2.count;
+}
+
